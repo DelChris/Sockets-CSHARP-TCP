@@ -13,6 +13,7 @@ namespace _1a___WiFi_Client
     {
         private static Socket _socket;
         private static String input;
+        private static String pseudo;
 
         static void Main(string[] args)
         {
@@ -31,6 +32,10 @@ namespace _1a___WiFi_Client
             IPEndPoint ipEndPoint = new IPEndPoint(address, port);
 
             _socket.Connect(ipEndPoint);
+
+            Console.Write("Choisissez un pseudo : ");
+            pseudo = Console.ReadLine();
+
             var thread = new Thread(Listen);
             thread.Start();
         }
@@ -39,9 +44,9 @@ namespace _1a___WiFi_Client
         {
             while (true)
             {
-                Console.WriteLine("Message à envoyer :");
+                Console.Write("Message à envoyer : ");
                 input = Console.ReadLine();
-                _socket.Send(Encoding.UTF8.GetBytes(input));
+                _socket.Send(Encoding.UTF8.GetBytes(pseudo + " : " + input));
                 Console.WriteLine("Message envoyé.");
             }
         }

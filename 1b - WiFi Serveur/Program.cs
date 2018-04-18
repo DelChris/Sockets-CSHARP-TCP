@@ -58,7 +58,7 @@ namespace _1b___WiFi_Serveur
                 if (readBytes > 0)
                 {
                     var msg = Encoding.UTF8.GetString(buffer, 0, readBytes);
-                    Console.WriteLine($"Client : {msg}");
+                    Console.WriteLine($"{msg}");
                 }
             }
         }
