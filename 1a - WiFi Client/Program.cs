@@ -17,11 +17,12 @@ namespace _1a___WiFi_Client
         static void Main(string[] args)
         {
             Console.WriteLine("------------------ WiFi Client v0.1 ------------------");
+
             Console.Write("Choisissez l'ip où vous connecter : ");
             String address = Console.ReadLine();
             Console.Write("Choisissez le port d'écoute : ");
-            int port = int.Parse(Console.ReadLine());
-            ClientTCP(IPAddress.Parse(address), port);
+            String port = Console.ReadLine();
+            ClientTCP(IPAddress.Parse(address), int.Parse(port));
         }
 
         private static void ClientTCP(IPAddress address, int port)

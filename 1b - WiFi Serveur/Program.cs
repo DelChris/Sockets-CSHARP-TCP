@@ -13,11 +13,6 @@ namespace _1b___WiFi_Serveur
     {
         private static Socket _listenerSocket;
 
-        private static byte[] buffer;
-        private static int readBytes;
-
-        private static Socket SocketReceive;
-
         static void Main(string[] args)
         {
             Console.WriteLine("------------------ WiFi Serveur v0.1 ------------------");
@@ -44,11 +39,23 @@ namespace _1b___WiFi_Serveur
             {
                 _listenerSocket.Listen(0);
                 //Clients.Add(new ClientManager(_listenerSocket.Accept()));
-                SocketReceive = _listenerSocket.Accept();
+                var SocketReceive = _listenerSocket.Accept();
                 Console.WriteLine("Client connecté.");
-                buffer = new byte[SocketReceive.SendBufferSize];
-                readBytes = SocketReceive.Receive(buffer);
-                if(readBytes > 0)
+                var clientThread = new Thread(() => 
+                {
+                    Client(SocketReceive);
+                });
+                clientThread.Start();
+            }
+        }
+
+        private static void Client(Socket socketReceive)
+        {
+            while (true)
+            {
+                var buffer = new byte[socketReceive.SendBufferSize];
+                var readBytes = socketReceive.Receive(buffer);
+                if (readBytes > 0)
                 {
                     var msg = Encoding.UTF8.GetString(buffer, 0, readBytes);
                     Console.WriteLine($"Client : {msg}");
