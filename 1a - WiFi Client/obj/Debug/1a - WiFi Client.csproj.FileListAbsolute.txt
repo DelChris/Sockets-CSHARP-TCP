@@ -1,0 +1,7 @@
+C:\Users\delch\source\repos\Sockets\1a - WiFi Client\bin\Debug\1a - WiFi Client.exe.config
+C:\Users\delch\source\repos\Sockets\1a - WiFi Client\bin\Debug\1a - WiFi Client.exe
+C:\Users\delch\source\repos\Sockets\1a - WiFi Client\bin\Debug\1a - WiFi Client.pdb
+C:\Users\delch\source\repos\Sockets\1a - WiFi Client\obj\Debug\1a - WiFi Client.csprojResolveAssemblyReference.cache
+C:\Users\delch\source\repos\Sockets\1a - WiFi Client\obj\Debug\1a - WiFi Client.csproj.CoreCompileInputs.cache
+C:\Users\delch\source\repos\Sockets\1a - WiFi Client\obj\Debug\1a - WiFi Client.exe
+C:\Users\delch\source\repos\Sockets\1a - WiFi Client\obj\Debug\1a - WiFi Client.pdb
